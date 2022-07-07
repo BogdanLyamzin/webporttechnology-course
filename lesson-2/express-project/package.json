@@ -1,5 +1,5 @@
 {
-  "name": "work-with-json-files",
+  "name": "express-example-4",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -16,6 +16,8 @@
     "nodemon": "^2.0.12"
   },
   "dependencies": {
-    "nanoid": "3.3.4"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nanoid": "^3.3.3"
   }
 }

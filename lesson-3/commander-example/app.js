@@ -1,3 +1,5 @@
+import {program} from "commander";
+
 import books from "./books/index.js";
 
 const invokeAction = async ({action, id, title, author}) => {
@@ -25,8 +27,14 @@ const invokeAction = async ({action, id, title, author}) => {
     }
 }
 
-// invokeAction({action: "getAll"})
-// invokeAction({action: "getById", id: "u9kgwNWGi3uUUwh0b8V49"})
-// invokeAction({action: "add", title: "Worm", author: "Маккрей"})
-// invokeAction({action: "updateById", id: "8HspTyKQ6GurxtgGqprgJ", title: "Ward", author: "Маккрей"})
-// invokeAction({action: "removeById", id: "8HspTyKQ6GurxtgGqprgJ"})
+program
+    .option("-a, --action <type>")
+    .option("-i, --id <type>")
+    .option("-t, --title <type>")
+    .option("-at, --author <type>");
+
+program.parse(process.argv);
+
+const options = program.opts();
+
+invokeAction(options);

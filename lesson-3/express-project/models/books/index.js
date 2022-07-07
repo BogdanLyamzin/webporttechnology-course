@@ -35,9 +35,10 @@ const add = async(data) => {
     return newBook;
 }
 
-const updateById = async({id, title, author}) => {
+const updateById = async(id, {title, author}) => {
     const books = await getAll();
     const idx = books.findIndex(item => item.id === id);
+    console.log(id);
     if(idx === -1){
         return null;
     }

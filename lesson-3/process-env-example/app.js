@@ -25,8 +25,8 @@ const invokeAction = async ({action, id, title, author}) => {
     }
 }
 
-// invokeAction({action: "getAll"})
-// invokeAction({action: "getById", id: "u9kgwNWGi3uUUwh0b8V49"})
-// invokeAction({action: "add", title: "Worm", author: "Маккрей"})
-// invokeAction({action: "updateById", id: "8HspTyKQ6GurxtgGqprgJ", title: "Ward", author: "Маккрей"})
-// invokeAction({action: "removeById", id: "8HspTyKQ6GurxtgGqprgJ"})
+const actionIndex = process.argv.indexOf("--action");
+if(actionIndex !== -1) {
+    const action = process.argv[actionIndex + 1];
+    invokeAction({action})
+}
